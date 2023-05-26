@@ -3,13 +3,7 @@ session_start();
 
 // Verificar se o formulário de login foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Conectar ao banco de dados
-    $conn = new mysqli("localhost", "root", "", "mecanica");
-
-    // Verificar a conexão com o banco de dados
-    if ($conn->connect_error) {
-        die("Falha na conexão com o banco de dados: " . $conn->connect_error);
-    }
+    require("../conexao.php");
 
     // Obter os valores do formulário de login
     $username = $_POST["username"];
@@ -24,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Login bem-sucedido
         $_SESSION["username"] = $username;
         $_SESSION["nomeUser"] = $nome;
-        header("Location: dashboard.php"); // Redirecionar para a página de dashboard ou página protegida
+        header("Location: ../dashboard.php"); // Redirecionar para a página de dashboard ou página protegida
     } else {
         // Login inválido
         $error = "Nome de usuário ou senha inválidos";
