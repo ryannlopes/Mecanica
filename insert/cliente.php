@@ -10,5 +10,5 @@
     //Inserindo dados no banco via query
     $query = "INSERT INTO cliente(nomeCliente, emailCliente, celularCliente) VALUE  ('$nome', '$email', '$celular')";
     $busca = mysqli_query($conn, $query);
-    header("Location: ../../index.php");
+    header("Location: ../cliente.php");
 ?>
