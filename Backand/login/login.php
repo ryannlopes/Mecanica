@@ -53,6 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <br><br>
 
         <input type="submit" value="Login">
+        <a href="../formularios/usuario.php">Cadastrar</a>
     </form>
 </body>
 </html>

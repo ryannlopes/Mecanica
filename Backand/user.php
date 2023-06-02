@@ -25,21 +25,19 @@ $nome     = $_SESSION["nomeUser"];
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Clientes</title>
+    <title>Usuario</title>
 </head>
 <body>
     <?php require("nav.php");?>
-      <!-- Clientes -->
+      <!-- Usuario -->
       <table border="1px" style="text-align: center;">
-        <h1>Clientes</h1>
+        <h1>Usuario</h1>
         <thead>
           <tr>
             <th>ID</th>
             <th>Nome</th>
-            <th>Função</th>
-            <th>E-mail</th>
-            <th>Celular</th>
-            <th><a type="button" href="formularios/funcionario.php">CADASTRAR</a></th>
+            <th>Username</th>
+            <th><a type="button" href="formularios/user.php">CADASTRAR</a></th>
           </tr>
         </thead>
         <tbody>
@@ -47,19 +45,17 @@ $nome     = $_SESSION["nomeUser"];
             <?php
             require('conexao.php');
 
-            $query = "SELECT * FROM funcionario";
+            $query = "SELECT * FROM usuario";
             $busca = mysqli_query($conn, $query);
 
             while ($dados = mysqli_fetch_array($busca)) {
-                $id = $dados['idFuncionario'];
+                $id = $dados['idUser'];
             ?>
-            <td><?php echo $dados['idFuncionario'] ?> </td>
-            <td><?php echo $dados['nomeFuncionario'] ?></td>
-            <td><?php echo $dados['funcaoFuncionario'] ?></td>
-            <td><?php echo $dados['emailFuncionario'] ?></td>
-            <td><?php echo $dados['celularFuncionario'] ?></td>
+            <td><?php echo $dados['idUser'] ?> </td>
+            <td><?php echo $dados['nomeUser'] ?></td>
+            <td><?php echo $dados['username'] ?></td>
             <td><a  href="">EDITAR</a></td>
-            <td><a  href="./delete/funcionario.php?idFuncionario=<?php echo $dados['idFuncionario']?>">DELETAR</td>
+            <td><a  href="./delete/user.php?idUser=<?php echo $dados['idUser']?>">DELETAR</td>
           </tr>
 
           <?php } ?>

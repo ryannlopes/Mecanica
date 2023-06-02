@@ -62,7 +62,7 @@ $nome     = $_SESSION["nomeUser"];
             <td><?php echo $dados['anoVeiculo'] ?></td>
             <td><?php echo $dados['Cliente'] ?></td>
             <td><a  href="">EDITAR</a></td>
-            <td><a  href="">DELETAR</td>
+            <td><a  href="./delete/veiculo.php?idVeiculo=<?php echo $dados['idVeiculo']?>">DELETAR</td>
           </tr>
 
           <?php } ?>
