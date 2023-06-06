@@ -5,23 +5,24 @@ require_once '../conexao.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     //Declarando as Variveis com os valores do Front
     $id      = $_POST['id'];
-    $placa   = $_POST['placa'];
-    $modelo  = $_POST['modelo'];
-    $ano     = $_POST['ano'];
-    $cliente = $_POST['cliente'];
+    $nome    = $_POST['nome'];
+    $funcao  = $_POST['funcao'];
+    $email   = $_POST['email'];
+    $celular = $_POST['celular'];
+
     // atualiza registro no banco de dados
-    $query = "UPDATE veiculo SET placaVeiculo = '$placa', modeloVeiculo = '$modelo', anoVeiculo = '$ano', fkIdCliente = '$cliente' 
-    WHERE IdVeiculo = '$id'";
+    $query = "UPDATE funcionario SET nomeFuncionario = '$nome',funcaoFuncionario = '$funcao', emailFuncionario = '$email', celularFuncionario = '$celular' 
+    WHERE IdFuncionario = '$id'";
     $resultado = mysqli_query($conn, $query);
 
     if ($resultado) {
-        header("Location: ../veiculo.php");
+        header("Location: ../funcionario.php");
         exit();
     } else {
         // exibe mensagem de erro
         echo "Erro ao atualizar registro: " . mysqli_error($conn);
     }
 } else {
-    echo "Erro ao atualizar os dados do veiculo.";
+    echo "Erro ao atualizar os dados da pessoa.";
 }
 ?>

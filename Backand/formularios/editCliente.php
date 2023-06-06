@@ -31,7 +31,7 @@
     <form method="POST" action="../update/cliente.php">
       <h1>EDITAR PESSOA</h1>
       <label>ID:</label>
-      <input type="text" id="id" name="id" disabled value="<?php echo htmlspecialchars($dados['idCliente']) ?>">
+      <input type="text" id="id" name="id" value="<?php echo htmlspecialchars($dados['idCliente']) ?>">
       <label>Nome:</label>
       <input type="text" id="nome" name="nome" value="<?php echo htmlspecialchars($dados['nomeCliente']) ?>">
       <label>Email:</label>
