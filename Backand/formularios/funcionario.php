@@ -10,11 +10,6 @@
       <h1>CADASTRO FUNCIONÁRIO</h1>
       <label>Nome:</label>
       <input type="text" id="nome" name="nome">
-      <label>Função:</label>
-      <select name="funcao">
-         <option value="Atendente">Atendente</option>
-        <option value="Mecanico">Mecanico</option>
-      </select>
       <label>E-mail:</label>
       <input type="email" id="email" name="email">
       <label>Celular:</label>

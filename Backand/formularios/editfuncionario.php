@@ -35,11 +35,6 @@
       <input type="text" id="id" name="id" value="<?php echo htmlspecialchars($dados['idFuncionario']) ?>">
       <label>Nome:</label>
       <input type="text" id="nome" name="nome" value="<?php echo htmlspecialchars($dados['nomeFuncionario']) ?>">
-      <label>Função:</label>
-      <select name="funcao">
-         <option value="Atendente">Atendente</option>
-        <option value="Mecanico">Mecanico</option>
-      </select>
       <label>E-mail:</label>
       <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($dados['emailFuncionario']) ?>">
       <label>Celular:</label>
