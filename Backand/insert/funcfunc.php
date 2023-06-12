@@ -9,5 +9,5 @@
     $query = "INSERT INTO funcionariofuncao(id_funcionario, id_funcao) 
     VALUE  ('$funcionario', '$funcao')";
     $busca = mysqli_query($conn, $query);
-    header("Location: ../funcionario.php");
+    header("Location: ../../Front-end/examples/Funcionario.php");
 ?>
