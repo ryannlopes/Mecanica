@@ -151,14 +151,14 @@
                   <h4 class="card-title">Cadastrar Relatório Funcionario-Função</h4>
                 </div>
                 <div class="card-body">
-                  <form method="POST" action="../../Backand/insert/funcfunc.php">
+                  <form method="POST" action="../insert/funcfunc.php">
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">Funcionario</label>
                           <select name="funcionario" class="form-control">
                             <?php
-                            require('../../Backand/conexao.php');
+                            require('../conexao.php');
                     
                             $query = "SELECT * FROM funcionario";
                             $busca = mysqli_query($conn, $query);
@@ -176,7 +176,7 @@
                           <label class="bmd-label-floating">Função</label>
                           <select name="funcao" class="form-control">
                             <?php
-                            require('../../Backand/conexao.php');
+                            require('../conexao.php');
                     
                             $query = "SELECT * FROM funcao";
                             $busca = mysqli_query($conn, $query);
@@ -190,7 +190,7 @@
                         </div>
                       </div>
                     </div>
-                    <button type="submit" class="btn btn-primary pull-right">Cadastrar Função</button>
+                    <button type="submit" class="btn btn-primary pull-right">Cadastrar Relatório</button>
                     <div class="clearfix"></div>
                   </form>
                 </div>

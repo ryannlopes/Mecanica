@@ -149,6 +149,12 @@ $nome     = $_SESSION["nomeUser"];
                 <div class="card-body">
                   <form method="POST" action="../update/user.php">
                     <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">ID</label>
+                          <input class="form-control" type="text" id="id" name="id" value="<?php echo htmlspecialchars($dados['idUser']) ?>">
+                        </div>
+                      </div>
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Nome</label>

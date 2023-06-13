@@ -124,12 +124,12 @@ $nome     = $_SESSION["nomeUser"];
                   <h4 class="card-title">Cadastrar Função</h4>
                 </div>
                 <div class="card-body">
-                  <form>
+                  <form method="post" action="../insert/funcao.php">
                     <div class="row">
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="bmd-label-floating">Nome Função</label>
-                          <input type="text" class="form-control">
+                          <input type="text" class="form-control" name="nome">
                         </div>
                       </div>
                     </div>

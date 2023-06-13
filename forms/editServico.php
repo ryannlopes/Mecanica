@@ -151,6 +151,12 @@ $nome     = $_SESSION["nomeUser"];
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
+                          <label class="bmd-label-floating">ID</label>
+                          <input class="form-control" type="text" id="id" name="id" value="<?php echo htmlspecialchars($dados['idServico']) ?>">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
                           <label class="bmd-label-floating">Descrição</label>
                           <input class="form-control" type="text" id="descricao" name="descricao" value="<?php echo htmlspecialchars($dados['descricaoServico']) ?>">
                         </div>

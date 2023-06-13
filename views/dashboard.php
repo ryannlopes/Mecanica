@@ -96,10 +96,54 @@ $nome     = $_SESSION["nomeUser"];
 
       var options = {
         title: 'Quantidade De Dados Tabelas',
-       
+        backgroundColor: 'transparent',
+        titleColor: 'white',
+        is3D: true
       };
 
       var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+      chart.draw(data, options);
+    }
+  </script>
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['Tabelas', 'Quantidade'],
+        ['Atedente',     <?php
+                    require('../conexao.php');
+                    $query = "SELECT * FROM funcionariofuncao WHERE id_funcao = 1";
+                    $busca = mysqli_query($conn, $query);
+                    $cont = 0;
+                    while ($dados = mysqli_fetch_array($busca)) {
+                      $cont++;
+                    }
+                    echo $cont;
+                    ?>],
+        ['Mecanico',       <?php
+                    require('../conexao.php');
+                    $query = "SELECT * FROM funcionariofuncao WHERE id_funcao = 2";
+                    $busca = mysqli_query($conn, $query);
+                    $cont = 0;
+                    while ($dados = mysqli_fetch_array($busca)) {
+                      $cont++;
+                    }
+                    echo $cont;
+                    ?>]
+      ]);
+
+      var options = {
+        title: 'Funçoes dos Funcionarios',
+        backgroundColor: 'transparent',
+        titleColor: 'white',
+        is3D: true
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
 
       chart.draw(data, options);
     }
@@ -265,8 +309,8 @@ $nome     = $_SESSION["nomeUser"];
             </div>
           </div>
           <div class="row" style="margin: 20px 0 0 4px;">
-            <div id="piechart" style="width: 600px; height: 500px;"></div>
-            <!-- <div id="piechart2" style="width: 600px; height: 500px;"></div> -->
+            <div id="piechart" style="width: 650px; height: 500px;"></div>
+            <div id="piechart2" style="width: 650px; height: 500px;"></div>
           </div>
         </div>
       </div>

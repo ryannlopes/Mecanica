@@ -13,7 +13,7 @@
 
         // Verificando se a query foi executada com sucesso
         if($busca){
-            header("Location: ../views/user.php");
+            header("Location: ../views/usuario.php");
         } else {
             echo "Erro ao deletar registro!";
         }

@@ -127,6 +127,7 @@ $nome     = $_SESSION["nomeUser"];
                   <div class="table-responsive">
                     <table class="table table-hover">
                       <thead class="">
+                        <th>ID</th>
                         <th>Nome</th>
                         <th>E-mail</th>
                         <th>Fone</th>
@@ -148,6 +149,7 @@ $nome     = $_SESSION["nomeUser"];
                           while ($dados = mysqli_fetch_array($busca)) {
                               $id = $dados['idCliente'];
                           ?>
+                          <td><?php echo $dados['idCliente'] ?></td>
                           <td><?php echo $dados['nomeCliente'] ?></td>
                           <td><?php echo $dados['emailCliente'] ?></td>
                           <td><?php echo $dados['celularCliente'] ?></td>

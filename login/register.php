@@ -30,7 +30,7 @@
                   <h4 class="card-title">Registrar-se</h4>
                 </div>
                 <div class="card-body">
-                  <form method="POST" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
+                  <form method="POST" action="../insert/user.php">
                     <div class="row">
                       <div class="col-md-12">
                         <div class="form-group">
@@ -46,8 +46,8 @@
                       </div>
                       <div class="col-md-12">
                         <div class="form-group">
-                          <label for="password" class="bmd-label-floating">Password</label>
-                          <input type="password" class="form-control" name="password" id="password" required>
+                          <label for="password" class="bmd-label-floating">Senha</label>
+                          <input type="password" class="form-control" name="senha" id="senha" required>
                         </div>
                       </div>
                     </div>

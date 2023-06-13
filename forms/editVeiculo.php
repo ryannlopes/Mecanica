@@ -52,7 +52,13 @@ $nome     = $_SESSION["nomeUser"];
         $id = mysqli_real_escape_string($conn, $_GET['idVeiculo']);
 
         // Consulta a cliente com o id informado
-        $query = "SELECT * FROM veiculo WHERE idVeiculo = '$id'";
+        $query = "SELECT idVeiculo,
+                        fkidCliente,
+                         placaVeiculo,
+                         modeloVeiculo,
+                         anoVeiculo,
+                         nomeCliente FROM veiculo
+                        INNER JOIN Cliente ON fkIdCliente = idCliente WHERE idVeiculo = '$id'";
         $busca = mysqli_query($conn, $query);
 
         // Verifica se a consulta retornou algum resultado
@@ -149,6 +155,12 @@ $nome     = $_SESSION["nomeUser"];
                 <div class="card-body">
                   <form method="POST" action="../update/veiculo.php">
                     <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">id</label>
+                          <input class="form-control" type="text" id="id" name="id" value="<?php echo htmlspecialchars($dados['idVeiculo']) ?>">
+                        </div>
+                      </div>
                       <div class="col-md-5">
                         <div class="form-group">
                           <label class="bmd-label-floating">Placa</label>
@@ -171,6 +183,7 @@ $nome     = $_SESSION["nomeUser"];
                       <div class="form-group">
                         <label class="bmd-label-floating">Proprietário</label>
                         <select name="cliente" class="form-control" style="color: currentColor">
+                        <option value="<?php echo $dados['fkidCliente'];?>"><?php echo $dados['nomeCliente']; ?></option>
                           <?php
                           require('../conexao.php');
 

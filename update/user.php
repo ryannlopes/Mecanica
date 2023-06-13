@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $resultado = mysqli_query($conn, $query);
 
     if ($resultado) {
-        header("Location: ../views/user.php");
+        header("Location: ../views/usuario.php");
         exit();
     } else {
         // exibe mensagem de erro

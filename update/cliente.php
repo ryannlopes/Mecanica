@@ -10,7 +10,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $celular = $_POST['celular'];
 
     // atualiza registro no banco de dados
-    $query = "UPDATE cliente SET nomeCliente = '$nome', emailCliente = '$email', celularCliente = '$celular' WHERE IdCliente = '$id'";
+    $query = "UPDATE cliente SET nomeCliente = '$nome', emailCliente = '$email', celularCliente = '$celular' 
+              WHERE IdCliente = '$id'";
     $resultado = mysqli_query($conn, $query);
 
     if ($resultado) {

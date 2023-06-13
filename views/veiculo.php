@@ -127,6 +127,7 @@ $nome     = $_SESSION["nomeUser"];
                   <div class="table-responsive">
                     <table class="table table-hover">
                       <thead class="">
+                        <th>ID</th>
                         <th>Placa</th>
                         <th>Modelo</th>
                         <th>Ano</th>
@@ -144,16 +145,17 @@ $nome     = $_SESSION["nomeUser"];
                           require('../conexao.php');
 
                           $query = "SELECT idVeiculo,
-                                          placaVeiculo,
-                                          modeloVeiculo,
-                                          anoVeiculo,
-                                          nomeCliente as Cliente FROM veiculo
-                                          INNER JOIN Cliente ON fkIdCliente = idCliente";
+                                           placaVeiculo,
+                                           modeloVeiculo,
+                                           anoVeiculo,
+                                           nomeCliente as Cliente FROM veiculo
+                                           INNER JOIN Cliente ON fkIdCliente = idCliente";
                           $busca = mysqli_query($conn, $query);
 
                           while ($dados = mysqli_fetch_array($busca)) {
                               $id = $dados['idVeiculo'];
                           ?>
+                          <td><?php echo $dados['idVeiculo'] ?> </td>
                           <td><?php echo $dados['placaVeiculo'] ?> </td>
                           <td><?php echo $dados['modeloVeiculo'] ?></td>
                           <td><?php echo $dados['anoVeiculo'] ?></td>
@@ -173,7 +175,6 @@ $nome     = $_SESSION["nomeUser"];
                             </a>
                           </td>
                         </tr>
-
                         <?php } ?>
                       </tbody>
                     </table>

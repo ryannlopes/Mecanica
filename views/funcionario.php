@@ -127,12 +127,13 @@ $nome     = $_SESSION["nomeUser"];
                   <div class="table-responsive">
                     <table class="table table-hover">
                       <thead class="">
+                        <th>ID</th>
                         <th>Nome</th>
                         <th>Email</th>
                         <th>Fone</th>
                         <th></th>
                         <th>
-                          <a type="button" href="forms/formFuncionario.php" rel="tooltip" title="Adicionar" style="margin-left: 18px;">
+                          <a type="button" href="../forms/formFuncionario.php" rel="tooltip" title="Adicionar" style="margin-left: 18px;">
                             <i class="material-icons" style="padding-right: 30px;">add</i></th>
                           </a>
                         </th>
@@ -148,6 +149,7 @@ $nome     = $_SESSION["nomeUser"];
                           while ($dados = mysqli_fetch_array($busca)) {
                               $id = $dados['idFuncionario'];
                           ?>
+                          <td><?php echo $dados['idFuncionario'] ?></td>
                           <td><?php echo $dados['nomeFuncionario'] ?></td>
                           <td><?php echo $dados['emailFuncionario'] ?></td>
                           <td><?php echo $dados['celularFuncionario'] ?></td>
@@ -215,6 +217,66 @@ $nome     = $_SESSION["nomeUser"];
                           </td>
                           <td style="width: 5%">
                             <a href="../delete/funcao.php?idFuncao=<?php echo $dados['idFuncao']?>">
+                              <button type="button" rel="tooltip" title="Excluir" class="btn btn-white btn-link btn-sm">
+                                <i class="material-icons" style="padding-right: 30px;">delete</i>
+                              </button>
+                            </a>
+                          </td>
+                        </tr>
+
+                        <?php } ?>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="card card-plain">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title mt-0">Relatório Funcionário e Funções</h4>
+                  <!-- <p class="card-category"> Here is a subtitle for this table</p> -->
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <thead class="">
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>Função</th>
+                        <th></th>
+                        <th>
+                          <a type="button" href="../forms/formFuncionarioFuncao.php" rel="tooltip" title="Adicionar" style="margin-left: 18px;">
+                            <i class="material-icons" style="padding-right: 30px;">add</i></th>
+                          </a>
+                        </th>
+                      </thead>
+                        <tbody>
+                        <tr>
+                          <?php
+                          require('../conexao.php');
+
+                          $query = "SELECT id, nomeFuncionario, nomeFuncao 
+                                    FROM funcionariofuncao
+                                    INNER JOIN funcionario ON id_funcionario = idFuncionario
+                                    INNER JOIN funcao ON id_funcao = idFuncao";
+                          $busca = mysqli_query($conn, $query);
+
+                          while ($dados = mysqli_fetch_array($busca)) {
+                              $id = $dados['id'];
+                          ?>
+                          <td><?php echo $dados['id'] ?></td>
+                          <td><?php echo $dados['nomeFuncionario'] ?></td>
+                          <td><?php echo $dados['nomeFuncao'] ?></td>
+                          <td style="width: 5%">
+                            <a href="../forms/editFuncionarioFuncao.php?id=<?php echo $dados['id']?>">
+                              <button type="button" rel="tooltip" title="Editar" class="btn btn-white btn-link btn-sm">
+                                <i class="material-icons" style="padding-right: 25px;">edit</i>
+                              </button>
+                            </a>
+                          </td>
+                          <td style="width: 5%">
+                            <a href="../delete/funcfunc.php?id=<?php echo $dados['id']?>">
                               <button type="button" rel="tooltip" title="Excluir" class="btn btn-white btn-link btn-sm">
                                 <i class="material-icons" style="padding-right: 30px;">delete</i>
                               </button>

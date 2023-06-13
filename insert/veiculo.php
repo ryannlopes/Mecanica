@@ -12,5 +12,5 @@
     $query = "INSERT INTO veiculo(placaVeiculo, modeloVeiculo, anoVeiculo, fkIdCliente) 
     VALUE  ('$placa', '$modelo', '$ano', '$cliente')";
     $busca = mysqli_query($conn, $query);
-    header("Location: ../veiculo.php");
+    header("Location: ../views/veiculo.php");
 ?>

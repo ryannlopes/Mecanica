@@ -10,5 +10,5 @@
     $query = "INSERT INTO servico(descricaoServico, valorServico) 
     VALUE  ('$descricao', '$valor')";
     $busca = mysqli_query($conn, $query);
-    header("Location: ../servico.php");
+    header("Location: ../views/servico.php");
 ?>

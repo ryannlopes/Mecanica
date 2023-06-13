@@ -124,7 +124,7 @@ $nome     = $_SESSION["nomeUser"];
                   <h4 class="card-title">Cadastrar Funcionário</h4>
                 </div>
                 <div class="card-body">
-                  <form method="POST" action="../../Backand/insert/funcionario.php">
+                  <form method="POST" action="../insert/funcionario.php">
                     <div class="row">
                       <div class="col-md-4">
                         <div class="form-group">
